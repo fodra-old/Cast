@@ -1,0 +1,17 @@
+server:
+   port: 8080
+   
+spring:
+   jpa:
+      show-sql: true
+      hibernate:
+         ddl-auto: update
+         dormat_sql: true
+      database-platform: org.hibernate.dialect.H2Dialect
+   application:
+      name: CastBackEnd
+   datasource:
+      url: jdbc:h2:mem:testdb;IFEXISTS=FALSE
+      driverClassName: org.h2.Driver
+      username: sa
+      password: sa
