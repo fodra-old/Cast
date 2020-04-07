@@ -21,7 +21,6 @@
     </properties>
 
     <dependencies>
-
         <!-- web mvc 
         -->
         <dependency>
@@ -65,7 +64,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.restdocs</groupId>
+			<artifactId>spring-restdocs-mockmvc</artifactId>
+			<scope>test</scope>
+		</dependency>
         <!-- Permite o deploy automatico para testes
         -->
         <dependency>
@@ -104,7 +107,7 @@
 	</dependencyManagement>
     
     <build>
-        <finalName>services</finalName>
+        <finalName>BackEnd</finalName>
         <plugins>
 
             <!-- Permite o deploy em WAR -->
