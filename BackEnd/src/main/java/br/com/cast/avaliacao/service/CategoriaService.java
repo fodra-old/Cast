@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.cast.avaliacao.model.Categoria;
+import br.com.cast.avaliacao.model.QCategoria;
 import br.com.cast.avaliacao.repository.CategoriaRepository;
 
 @Service
@@ -38,6 +39,15 @@ public class CategoriaService {
 	public Object save(Categoria categoria) {
 
 		return categoriaRepository.save(categoria);
+	}
+	/**
+	 * Retorna a categoria com o código informado no parametro
+	 * @param categoria
+	 * @return
+	 */
+	public Categoria findByCodigo(Integer codigo) {
+		
+		return categoriaRepository.findOne(QCategoria.categoria.codigo.eq(codigo)).get();
 	}
 
 }

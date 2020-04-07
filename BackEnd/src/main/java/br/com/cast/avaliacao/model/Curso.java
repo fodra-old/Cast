@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Table
 @Entity
-public class Curso {
+public class Curso implements ICursoDatas {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
