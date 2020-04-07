@@ -30,5 +30,14 @@ public class CategoriaService {
 
 		return categoriaRepository.findAll();
 	}
+	/**
+	 * Salva registro categoria no banco de dados
+	 * @param categoria
+	 * @return
+	 */
+	public Object save(Categoria categoria) {
+
+		return categoriaRepository.save(categoria);
+	}
 
 }
