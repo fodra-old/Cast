@@ -17,9 +17,6 @@ spring:
       driverClassName: org.h2.Driver
       username: sa
       password: sa
-   http:
-      encoding:
-         charset: UTF-8
          
    jackson:
       serialization:
