@@ -26,7 +26,9 @@ public class CategoriaController {
 	@GetMapping()
 	public Categoria findById(@RequestParam("id") Integer id) {
 		
-		return categoriaService.findById(id);
+		Categoria c = categoriaService.findById(id); 
+		
+		return c;
 	}
 	
 	/**

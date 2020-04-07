@@ -40,6 +40,4 @@ public class Datas {
 		calendar.setTime(data);
 		return calendar;
 	}
-	
-	
 }
