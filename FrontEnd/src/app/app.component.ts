@@ -1,19 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Categoria } from './entities/Categoria';
+import { CategoriaService } from './entities/categoria.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'FrontEnd';
 
-  categorias : Object[] = []
+  constructor(private categoriaServive : CategoriaService) { }
 
-  constructor(http : HttpClient) {
-    http
-      .get<Object[]>('http://localhost:8080/categorias')
-      .subscribe(c => this.categorias = c);
+  ngOnInit(): void {
+
+    this.categoriaServive
+      .findAll()
+      .subscribe(c => {console.log(c)});
   }
 }
