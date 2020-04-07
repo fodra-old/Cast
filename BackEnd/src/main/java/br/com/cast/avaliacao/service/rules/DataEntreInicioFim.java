@@ -1,6 +1,5 @@
 package br.com.cast.avaliacao.service.rules;
 
-import br.com.cast.avaliacao.model.Curso;
 import br.com.cast.avaliacao.model.ICursoDatas;
 
 public class DataEntreInicioFim implements Regras {
