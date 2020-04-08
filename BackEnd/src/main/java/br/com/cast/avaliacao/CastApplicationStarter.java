@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import br.com.cast.avaliacao.model.Categoria;
 import br.com.cast.avaliacao.service.CategoriaService;
@@ -13,7 +15,7 @@ import br.com.cast.avaliacao.service.CategoriaService;
  * @author jmveloso
  */
 @SpringBootApplication
-public class CastApplicationStarter extends SpringBootServletInitializer {
+public class CastApplicationStarter extends SpringBootServletInitializer implements WebMvcConfigurer {
 
 	public static void main(String[] args) {
 		
@@ -27,4 +29,12 @@ public class CastApplicationStarter extends SpringBootServletInitializer {
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(CastApplicationStarter.class);
 	}
+	
+	/*
+	 * Permite o acesso a todos os endpoints da aplicação
+	 */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**");
+    }
 }
