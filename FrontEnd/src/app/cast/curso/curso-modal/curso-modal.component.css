@@ -1,0 +1,16 @@
+.app-curso-component-modal {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 350px;
+}
+.btn-fechar {
+    position: absolute;
+
+    top: 7%;
+    right: 7%;
+}

@@ -1,0 +1,27 @@
+<div style="height: 100vh;">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>Cast</span>
+            <span class="example-spacer"></span>
+            <div fxShow="true" fxHide.lt-md="true">
+                <a href="/curso" mat-button>Curso</a>
+                <a href="/curso/pesquisar" mat-button>Pesquisar Curso</a>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav>
+            <mat-nav-list>
+                <a (click)="sidenav.toggle()" href="#" mat-button>X</a><br>
+                <a href="/curso" mat-button>Curso</a><br>
+                <a href="/curso/pesquisar" mat-button>Pesquisar Curso</a>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

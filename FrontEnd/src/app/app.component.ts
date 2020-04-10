@@ -1,22 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Categoria } from './entities/Categoria';
-import { CategoriaService } from './entities/categoria.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'FrontEnd';
-
-  constructor(private categoriaServive : CategoriaService) { }
-
-  ngOnInit(): void {
-
-    this.categoriaServive
-      .findAll()
-      .subscribe(c => {console.log(c)});
-  }
 }

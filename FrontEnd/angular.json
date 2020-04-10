@@ -5,11 +5,7 @@
   "projects": {
     "FrontEnd": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "sass"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -28,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -92,7 +89,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -127,6 +125,6 @@
   },
   "defaultProject": "FrontEnd",
   "cli": {
-    "analytics": "1e2e2653-64b1-49d9-b229-3d075255f208"
+    "analytics": false
   }
 }

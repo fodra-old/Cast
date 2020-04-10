@@ -1,0 +1,13 @@
+<mat-form-field>
+    <mat-label>Categoria</mat-label>
+        <mat-select
+            [(ngModel)]="categoria"
+            [ngModelOptions]="{standalone:true}"
+            [compareWith]="compareObjects"
+            (ngModelChange)="bind($event)"
+            >
+            <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+                {{categoria.descricao}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

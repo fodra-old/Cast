@@ -1,0 +1,34 @@
+<div class="curso-component-container">
+    <form class="cadastro-curso">
+        <app-categoria></app-categoria><br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Assunto</mat-label>
+            <input type="text"
+                matInput placeholder="Assunto" 
+                [(ngModel)]="curso.assunto"
+                [ngModelOptions]="{standalone:true}">
+        </mat-form-field><br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Quantidade</mat-label>
+            <input type="number" 
+                matInput placeholder="Quantidade" 
+                [(ngModel)]="curso.quantidadeAlunos"
+                [ngModelOptions]="{standalone:true}">
+        </mat-form-field><br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Início</mat-label>
+            <input type="date" 
+                matInput placeholder="Data de Início" 
+                [(ngModel)]="curso.str_inicio"
+                [ngModelOptions]="{standalone:true}">
+        </mat-form-field><br>
+        <mat-form-field class="example-full-width">
+            <mat-label>Fim</mat-label>
+            <input type="date" 
+                matInput placeholder="Data de Fim" 
+                [(ngModel)]="curso.str_fim"
+                [ngModelOptions]="{standalone:true}">
+        </mat-form-field>
+    </form>
+    <button (click)="addOrUpdateCurso()" mat-raised-button color="primary">Salvar</button>
+</div>
