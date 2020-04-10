@@ -35,7 +35,7 @@ public class DataMenorQueHoje implements Regras {
 		
 		Date hoje = Datas.removeTempo(new Date());
 		
-		if (sourceData.before(hoje)) {
+		if (sourceData.compareTo(hoje) <= 0) {
 			 throw new Exception("A data informada esta no passado");
 		}
 	}

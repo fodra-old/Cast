@@ -24,25 +24,28 @@ public class DataEntreInicioFim implements Regras {
 	@Override
 	public void passa() throws Exception {
 
+		if(dataCurso.getId().equals(dataCursoNovo.getId()))
+			return;
+		
 		if (proximaRegra != null)
 			proximaRegra.passa();
 
 		String mensagem = "Curso já cadastrado no periodo";
 		
-		if (dataCurso.getInicio().before(dataCursoNovo.getInicio())
-				&& dataCurso.getFim().after(dataCursoNovo.getFim()))
+		if (dataCurso.getInicio().compareTo(dataCursoNovo.getInicio()) <= 0
+				&& dataCurso.getFim().compareTo(dataCursoNovo.getFim()) >= 0)
 			throw new Exception(mensagem);
 		
-		if (dataCurso.getInicio().before(dataCursoNovo.getInicio()) 
-				&& dataCurso.getFim().after(dataCursoNovo.getInicio())) 
+		if (dataCurso.getInicio().compareTo(dataCursoNovo.getInicio()) >= 0 
+				&& dataCurso.getFim().compareTo(dataCursoNovo.getInicio()) <= 0) 
 			throw new Exception(mensagem);
 		
-		if (dataCurso.getInicio().before(dataCursoNovo.getFim()) 
-				&& dataCurso.getFim().after(dataCursoNovo.getFim())) 
+		if (dataCurso.getInicio().compareTo(dataCursoNovo.getFim()) <= 0 
+				&& dataCurso.getFim().compareTo(dataCursoNovo.getFim()) >= 0) 
 			throw new Exception(mensagem);
 		
-		if (dataCurso.getInicio().after(dataCursoNovo.getInicio())
-				&& dataCurso.getFim().before(dataCursoNovo.getFim()))
+		if (dataCurso.getInicio().compareTo(dataCursoNovo.getInicio()) >= 0
+				&& dataCurso.getFim().compareTo(dataCursoNovo.getFim()) <= 0)
 			throw new Exception(mensagem);
 	}
 }

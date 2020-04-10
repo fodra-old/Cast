@@ -26,7 +26,7 @@ public class DataFimAntesInicio implements Regras {
 		if (proximaRegra != null)
 			proximaRegra.passa();
 		
-		if (novoCurso.getFim().before(novoCurso.getInicio()))
+		if (novoCurso.getFim().compareTo(novoCurso.getInicio()) <= 0)
 			throw new Exception("A data fim do curso é menor que a data fim");
 	}
 

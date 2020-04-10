@@ -28,7 +28,7 @@ public class CursoService {
 	 * @return
 	 */
 	public List<Curso> findByCategoria(Integer categoria_id) {
-	
+		
 		return Lists.newArrayList(cursoRepository.findAll(QCurso.curso.categoria.id.eq(categoria_id)));
 	}
 	
@@ -39,6 +39,41 @@ public class CursoService {
 	 * @throws Exception 
 	 */
 	public Curso salvar(@ModelAttribute("curso") Curso curso) throws Exception {
+		
+		verificarRegras(curso);
+		
+		cursoRepository.save(curso);
+		return curso;
+	}
+
+	/**
+	 * 
+	 * @param id
+	 */
+	public void deletar(Integer id) {
+		
+		cursoRepository.deleteById(id);
+	}
+
+	public Curso findById(Integer id) {
+
+		return cursoRepository.findById(id).get();
+	}
+
+	public Curso atualizar(Curso curso) throws Exception {
+
+		verificarRegras(curso);
+		
+		Curso c = cursoRepository.findById(curso.getId()).get();
+		c.setAssunto(curso.getAssunto());
+		c.setCategoria(curso.getCategoria());
+		c.setFim(curso.getFim());
+		c.setInicio(curso.getInicio());
+		c.setQuantidadeAlunos(curso.getQuantidadeAlunos());
+		return cursoRepository.save(c);
+	}
+	
+	private void verificarRegras(Curso curso) throws Exception {
 		
 		List<Curso> cursosCadastrados = cursoRepository.findAll();
 		Regras regras = null;
@@ -52,8 +87,5 @@ public class CursoService {
 		regras = new DataFimAntesInicio(regras, curso);
 		
 		regras.passa();
-		
-		cursoRepository.save(curso);
-		return curso;
 	}
 }
