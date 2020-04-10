@@ -4,6 +4,7 @@ import java.util.Date;
 
 public interface ICursoDatas {
 
+	public Integer getId();
 	public Date getInicio();
 	public Date getFim();
 }

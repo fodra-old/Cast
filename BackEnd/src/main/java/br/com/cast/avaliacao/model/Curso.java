@@ -36,6 +36,17 @@ public class Curso implements ICursoDatas {
 	public Curso() {
 	}
 
+	public Curso(String assunto, Date inicio, Date fim, Integer quantidadeAlunos, Categoria categoria) {
+
+		this.assunto = assunto;
+		this.inicio = inicio;
+		this.fim = fim;
+		this.quantidadeAlunos = quantidadeAlunos;
+		this.categoria = categoria;
+	}
+
+
+
 	public Integer getId() {
 		return id;
 	}
