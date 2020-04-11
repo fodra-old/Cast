@@ -1,7 +1,5 @@
 server:
    port: 8080
-   tomcat:
-      uri-encoding: UTF-8
    
 spring:
    jpa:
@@ -17,7 +15,3 @@ spring:
       driverClassName: org.h2.Driver
       username: sa
       password: sa
-         
-   jackson:
-      serialization:
-         fail-on-empty-beans: false
